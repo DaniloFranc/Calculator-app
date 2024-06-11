@@ -1,0 +1,297 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+    margin: 0;
+}
+
+.matrizDeBotoes{
+    background-color: hsl(223, 31%, 20%);
+    padding: 10px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.calculadora{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: hsl(222, 26%, 31%)
+}
+
+.alinTema{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.caixaSuperior{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 120px; /* Aumentado para acomodar mais espaço interno */
+    height: 40px; /* Aumentado para acomodar mais espaço interno */
+    background-color: #3b3b3b;
+    border-radius: 20px; /* Bordas arredondadas */
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-label {
+    position: absolute;
+    cursor: pointer;
+    border-radius: 20px; /* Bordas arredondadas */
+    width: 100%;
+    height: 100%;
+}
+
+.toggle-button {
+    position: absolute;
+    height: 32px; /* Ajustado para criar espaço interno uniforme */
+    width: 32px; /* Ajustado para criar espaço interno uniforme */
+    background-color: #ff4d4d;
+    border-radius: 50%; /* Botão completamente arredondado */
+    top: 4px; /* Ajustado para criar espaço uniforme */
+    left: 4px; /* Ajustado para criar espaço uniforme */
+    transition: left 0.3s, background-color 0.3s;
+}
+
+/* Estilos para os três estados */
+#switch-off:checked ~ .toggle-button {
+    left: 4px;
+    background-color: #ff4d4d;
+}
+
+#switch-middle:checked ~ .toggle-button {
+    left: 44px; /* Ajustado para a posição intermediária */
+    background-color: #ffeb3b;
+}
+
+#switch-on:checked ~ .toggle-button {
+    left: 84px; /* Ajustado para a posição final */
+    background-color: #4caf50;
+}
+
+/* Efeito hover */
+.toggle-label:hover ~ .toggle-button {
+    background-color: #ff6666;
+}
+
+
+/* .equal{
+
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(6, 63%, 50%);
+    border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    height: 50px;
+} */
+
+.alinTopo{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.equal {
+    background-color: #E74C3C; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+
+    border: none; /* Remover borda */
+    font-family: 'League Spartan';    
+    padding: 5px 50px 2px 49px;  /* Espaçamento interno do botão */
+    font-weight: bold;
+    margin: 6px;
+    font-size: 15px; /* Tamanho da fonte */
+    cursor: pointer; /* Alterar o cursor ao passar por cima do botão */
+    border-radius: 5px; /* Arredondar cantos */    
+    transition: all 0.2s ease-in-out;
+
+    box-shadow: 0px 3px 0px hsl(6, 70%, 34%); /* Adicionar sombra */
+}
+
+.equal:hover {
+    transform: translateY(-2px); /* Mover botão ligeiramente para cima ao passar o mouse */
+    box-shadow: 0px 4px 0px hsl(6, 70%, 34%); /* Ajustar sombra ao passar o mouse */
+}
+
+.equal:active {
+    transform: translateY(1px); /* Mover botão ligeiramente para baixo ao clicar */
+    box-shadow: 0px 4px 0px hsl(6, 70%, 34%); /* Ajustar sombra ao clicar */
+}
+
+.reset{
+    background-color: hsl(225, 21%, 49%); /* Cor de fundo do botão */
+    color: hsl(0, 0%, 100%); /* Cor do texto */
+
+    border: none; /* Remover borda */
+    font-family: 'League Spartan';    
+    padding: 6px 34px 1px 33px;  /* Espaçamento interno do botão */
+    font-weight: bold;
+    margin: 5px;
+    font-size: 15px; /* Tamanho da fonte */
+    cursor: pointer; /* Alterar o cursor ao passar por cima do botão */
+    border-radius: 5px; /* Arredondar cantos */    
+    transition: all 0.2s ease-in-out;
+
+    box-shadow: 0px 3px 0px hsl(224, 28%, 35%); /* Adicionar sombra */
+}
+
+.reset:hover {
+    transform: translateY(0px); /* Mover botão ligeiramente para cima ao passar o mouse */
+    box-shadow: 0px 4px 0px hsl(224, 28%, 35%); /* Ajustar sombra ao passar o mouse */
+}
+
+.reset:active {
+    transform: translateY(1px); /* Mover botão ligeiramente para baixo ao clicar */
+    box-shadow: 0px 4px 0px hsl(224, 28%, 35%); /* Ajustar sombra ao clicar */
+}
+
+.tecla {
+    background-color: hsl(30, 25%, 89%); /* Cor de fundo do botão */
+    color: hsl(221, 14%, 31%); /* Cor do texto */
+
+    border: none; /* Remover borda */
+    font-family: 'League Spartan';    
+    padding: 5px 18px 2px 18px;  /* Espaçamento interno do botão */
+    font-weight: bold;
+    margin: 6px;
+    font-size: 20px; /* Tamanho da fonte */
+    cursor: pointer; /* Alterar o cursor ao passar por cima do botão */
+    border-radius: 5px; /* Arredondar cantos */    
+    transition: all 0.2s ease-in-out;
+
+    box-shadow: 0px 2px 0px hsl(28, 16%, 65%); /* Adicionar sombra */
+}
+
+.tecla:focus {
+    
+    box-shadow: 0px 2px 0px hsl(28, 16%, 65%)
+}
+
+.tecla:active {
+    box-shadow: 0px 2px 0px hsl(28, 16%, 65%); /* Adicionar efeito de pressionamento */
+    transform: translateY(1px); /* Adicionar efeito de movimento ao pressionar */
+}
+
+.tecla1 {
+    background-color: hsl(30, 25%, 89%); /* Cor de fundo do botão */
+    color: hsl(221, 14%, 31%); /* Cor do texto */
+
+    border: none; /* Remover borda */
+    font-family: 'League Spartan';    
+    padding: 5px 20px 2px 20px;  /* Espaçamento interno do botão */
+    font-weight: bold;
+    margin: 6px;
+    font-size: 20px; /* Tamanho da fonte */
+    cursor: pointer; /* Alterar o cursor ao passar por cima do botão */
+    border-radius: 5px; /* Arredondar cantos */    
+    transition: all 0.2s ease-in-out;
+
+    box-shadow: 0px 2px 0px hsl(28, 16%, 65%); /* Adicionar sombra */
+}
+
+.tecla1:focus {
+    
+    box-shadow: 0px 2px 0px hsl(28, 16%, 65%)
+}
+
+.tecla1:active {
+    box-shadow: 0px 2px 0px hsl(28, 16%, 65%); /* Adicionar efeito de pressionamento */
+    transform: translateY(1px); /* Adicionar efeito de movimento ao pressionar */
+}
+
+
+.teclam {
+    background-color: hsl(30, 25%, 89%); /* Cor de fundo do botão */
+    color: hsl(221, 14%, 31%); /* Cor do texto */
+
+    border: none; /* Remover borda */
+    font-family: 'League Spartan';    
+    padding: 5px 20px 2px 19px;  /* Espaçamento interno do botão */
+    font-weight: bold;
+    margin: 6px;
+    font-size: 20px; /* Tamanho da fonte */
+    cursor: pointer; /* Alterar o cursor ao passar por cima do botão */
+    border-radius: 5px; /* Arredondar cantos */    
+    transition: all 0.2s ease-in-out;
+
+    box-shadow: 0px 2px 0px hsl(28, 16%, 65%); /* Adicionar sombra */
+}
+
+.teclam:focus {
+    
+    box-shadow: 0px 2px 0px hsl(28, 16%, 65%)
+}
+
+.teclam:active {
+    box-shadow: 0px 2px 0px hsl(28, 16%, 65%); /* Adicionar efeito de pressionamento */
+    transform: translateY(1px); /* Adicionar efeito de movimento ao pressionar */
+}
+
+
+.teclap {
+    background-color: hsl(30, 25%, 89%); /* Cor de fundo do botão */
+    color: hsl(221, 14%, 31%); /* Cor do texto */
+
+    border: none; /* Remover borda */
+    font-family: 'League Spartan';    
+    padding: 5px 20px 2px 21px;  /* Espaçamento interno do botão */
+    font-weight: bold;
+    margin: 6px;
+    font-size: 20px; /* Tamanho da fonte */
+    cursor: pointer; /* Alterar o cursor ao passar por cima do botão */
+    border-radius: 5px; /* Arredondar cantos */    
+    transition: all 0.2s ease-in-out;
+
+    box-shadow: 0px 2px 0px hsl(28, 16%, 65%); /* Adicionar sombra */
+}
+
+.teclap:focus {
+    
+    box-shadow: 0px 2px 0px hsl(28, 16%, 65%)
+}
+
+.teclap:active {
+    box-shadow: 0px 2px 0px hsl(28, 16%, 65%); /* Adicionar efeito de pressionamento */
+    transform: translateY(1px); /* Adicionar efeito de movimento ao pressionar */
+}
+
+
+.delete{
+    background-color: hsl(225, 21%, 49%); /* Cor de fundo do botão */
+    color: hsl(0, 0%, 100%); /* Cor do texto */
+
+    border: none; /* Remover borda */
+    font-family: 'League Spartan';    
+    padding: 7px 11px 2px 11px;  /* Espaçamento interno do botão */
+    font-weight: bold;
+    margin: 4px;
+    font-size: 15px; /* Tamanho da fonte */
+    cursor: pointer; /* Alterar o cursor ao passar por cima do botão */
+    border-radius: 5px; /* Arredondar cantos */    
+    transition: all 0.2s ease-in-out;
+
+    box-shadow: 0px 3px 0px hsl(224, 28%, 35%); /* Adicionar sombra */
+}
+
+.delete:hover {
+    transform: translateY(0px); /* Mover botão ligeiramente para cima ao passar o mouse */
+    box-shadow: 0px 4px 0px hsl(224, 28%, 35%); /* Ajustar sombra ao passar o mouse */
+}
+
+.delete:active {
+    transform: translateY(1px); /* Mover botão ligeiramente para baixo ao clicar */
+    box-shadow: 0px 4px 0px hsl(224, 28%, 35%); /* Ajustar sombra ao clicar */
+}
+
