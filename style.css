@@ -1,0 +1,448 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.text1{
+    font-family: 'League Spartan';
+    color: hsl(0, 0%, 100%);
+    font-weight: bold;
+    font-size: 25px;
+    padding: 140px 20px 1px 4px;
+}
+
+.text2{
+    
+    font-family: 'League Spartan';
+    color: hsl(0, 0%, 100%);
+    padding: 90px 20px 30px 4px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.space{
+    width: 300px;
+}
+
+.opcaoTema{
+
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    font-family: 'League Spartan';
+    color: hsl(0, 0%, 100%);
+    font-size: 10px;
+    font-weight: bold;
+    padding: 60px 6px 6px 6px;
+    
+}
+
+.matrizDeBotoes {
+    background-color: hsl(223, 31%, 20%);
+    padding: 20px; /* 10px * 2.0 */
+    border-radius: 10px; /* 10px * 2.0 */
+}
+
+.calculadora {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: hsl(222, 26%, 31%);
+    margin-top: -70px;
+    
+}
+
+.alinTema {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 4px 4px 4px 4px;
+}
+
+.caixaSuperior {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: -30px;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 60px; /* 120px / 2.0 */
+    height: 20px; /* 40px / 2.0 */
+    background-color: hsl(223, 31%, 20%);
+    border-radius: 20px; /* 40px / 2.0 */
+}
+
+
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-label {
+    position: absolute;
+    cursor: pointer;
+    border-radius: 10px; /* 20px / 2.0 */
+    width: 100%;
+    height: 100%;
+}
+
+.toggle-button {
+    position: absolute;
+    height: 13px; /* 32px / 2.0 */
+    width: 13px; /* 32px / 2.0 */
+    background-color: hsl(6, 63%, 50%);
+    border-radius: 50%;
+    top: 3.9px; /* 4px / 2.0 */
+    /* left: -200px; */
+    transition: left 0.3s, background-color 0.3s;
+}
+
+/* Estilos para os três estados */
+#switch-off:checked ~ .toggle-button {
+    left: 4px; /* 4px / 2.0 */
+    background-color: hsl(6, 63%, 50%);
+}
+
+#switch-middle:checked ~ .toggle-button {
+    left: 25px; /* 44px / 2.0 */
+    background-color: hsl(25, 98%, 40%);
+}
+
+#switch-on:checked ~ .toggle-button {
+    left: 43px; /* 84px / 2.0 */
+    background-color: hsl(176, 100%, 44%);
+}
+
+/* Efeito hover */
+.toggle-label:hover ~ .toggle-button {
+    background-color: #ff6666;
+}
+
+
+.alinTopo {
+    display: flex;
+    flex-direction: row;
+}
+
+.equal {
+    background-color: #E74C3C;
+    color: white;
+    border: none;
+    font-family: 'League Spartan';
+    padding: 10px 100px 4px 98px; /* 5px 50px 2px 49px * 2.0 */
+    font-weight: bold;
+    margin: 12px; /* 6px * 2.0 */
+    font-size: 30px; /* 15px * 2.0 */
+    cursor: pointer;
+    border-radius: 10px; /* 5px * 2.0 */
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 6px 0px hsl(6, 70%, 34%); /* 0px 3px * 2.0 */
+}
+
+.equal:hover {
+    transform: translateY(-4px); /* -2px * 2.0 */
+    box-shadow: 0px 8px 0px hsl(6, 70%, 34%); /* 0px 4px * 2.0 */
+}
+
+.equal:active {
+    transform: translateY(2px); /* 1px * 2.0 */
+    box-shadow: 0px 8px 0px hsl(6, 70%, 34%); /* 0px 4px * 2.0 */
+}
+
+.reset {
+    background-color: hsl(225, 21%, 49%);
+    color: hsl(0, 0%, 100%);
+    border: none;
+    font-family: 'League Spartan';
+    padding: 12px 68px 2px 66px; /* 6px 34px 1px 33px * 2.0 */
+    font-weight: bold;
+    margin: 10px; /* 5px * 2.0 */
+    font-size: 30px; /* 15px * 2.0 */
+    cursor: pointer;
+    border-radius: 10px; /* 5px * 2.0 */
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 6px 0px hsl(224, 28%, 35%); /* 0px 3px * 2.0 */
+}
+
+.reset:hover {
+    transform: translateY(0px);
+    box-shadow: 0px 8px 0px hsl(224, 28%, 35%); /* 0px 4px * 2.0 */
+}
+
+.reset:active {
+    transform: translateY(2px); /* 1px * 2.0 */
+    box-shadow: 0px 8px 0px hsl(224, 28%, 35%); /* 0px 4px * 2.0 */
+}
+
+.tecla {
+    background-color: hsl(30, 25%, 89%);
+    color: hsl(221, 14%, 31%);
+    border: none;
+    font-family: 'League Spartan';
+    padding: 10px 36px 4px 36px; /* 5px 18px 2px 18px * 2.0 */
+    font-weight: bold;
+    margin: 12px; /* 6px * 2.0 */
+    font-size: 40px; /* 20px * 2.0 */
+    cursor: pointer;
+    border-radius: 10px; /* 5px * 2.0 */
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 4px 0px hsl(28, 16%, 65%); /* 0px 2px * 2.0 */
+}
+
+.tecla:focus {
+    box-shadow: 0px 4px 0px hsl(28, 16%, 65%); /* 0px 2px * 2.0 */
+}
+
+.tecla:active {
+    box-shadow: 0px 4px 0px hsl(28, 16%, 65%); /* 0px 2px * 2.0 */
+    transform: translateY(2px); /* 1px * 2.0 */
+}
+
+.tecla1 {
+    background-color: hsl(30, 25%, 89%);
+    color: hsl(221, 14%, 31%);
+    border: none;
+    font-family: 'League Spartan';
+    padding: 10px 40px 4px 40px; /* 5px 20px 2px 20px * 2.0 */
+    font-weight: bold;
+    margin: 12px; /* 6px * 2.0 */
+    font-size: 40px; /* 20px * 2.0 */
+    cursor: pointer;
+    border-radius: 10px; /* 5px * 2.0 */
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 4px 0px hsl(28, 16%, 65%); /* 0px 2px * 2.0 */
+}
+
+.tecla1:focus {
+    box-shadow: 0px 4px 0px hsl(28, 16%, 65%); /* 0px 2px * 2.0 */
+}
+
+.tecla1:active {
+    box-shadow: 0px 4px 0px hsl(28, 16%, 65%); /* 0px 2px * 2.0 */
+    transform: translateY(2px); /* 1px * 2.0 */
+}
+
+.teclam {
+    background-color: hsl(30, 25%, 89%);
+    color: hsl(221, 14%, 31%);
+    border: none;
+    font-family: 'League Spartan';
+    padding: 10px 40px 4px 38px; /* 5px 20px 2px 19px * 2.0 */
+    font-weight: bold;
+    margin: 12px; /* 6px * 2.0 */
+    font-size: 40px; /* 20px * 2.0 */
+    cursor: pointer;
+    border-radius: 10px; /* 5px * 2.0 */
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 4px 0px hsl(28, 16%, 65%); /* 0px 2px * 2.0 */
+}
+
+.teclam:focus {
+    box-shadow: 0px 4px 0px hsl(28, 16%, 65%); /* 0px 2px * 2.0 */
+}
+
+.teclam:active {
+    box-shadow: 0px 4px 0px hsl(28, 16%, 65%); /* 0px 2px * 2.0 */
+    transform: translateY(2px); /* 1px * 2.0 */
+}
+
+.teclap {
+    background-color: hsl(30, 25%, 89%);
+    color: hsl(221, 14%, 31%);
+    border: none;
+    font-family: 'League Spartan';
+    padding: 10px 40px 4px 42px; /* 5px 20px 2px 21px * 2.0 */
+    font-weight: bold;
+    margin: 12px; /* 6px * 2.0 */
+    font-size: 40px; /* 20px * 2.0 */
+    cursor: pointer;
+    border-radius: 10px; /* 5px * 2.0 */
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 4px 0px hsl(28, 16%, 65%); /* 0px 2px * 2.0 */
+}
+
+.teclap:focus {
+    box-shadow: 0px 4px 0px hsl(28, 16%, 65%); /* 0px 2px * 2.0 */
+}
+
+.teclap:active {
+    box-shadow: 0px 4px 0px hsl(28, 16%, 65%); /* 0px 2px * 2.0 */
+    transform: translateY(2px); /* 1px * 2.0 */
+}
+
+.delete {
+    background-color: hsl(225, 21%, 49%);
+    color: hsl(0, 0%, 100%);
+    border: none;
+    font-family: 'League Spartan';
+    padding: 14px 22px 4px 22px; /* 7px 11px 2px 11px * 2.0 */
+    font-weight: bold;
+    margin: 8px; /* 4px * 2.0 */
+    font-size: 30px; /* 15px * 2.0 */
+    cursor: pointer;
+    border-radius: 10px; /* 5px * 2.0 */
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 6px 0px hsl(224, 28%, 35%); /* 0px 3px * 2.0 */
+}
+
+.delete:hover {
+    transform: translateY(0px);
+    box-shadow: 0px 8px 0px hsl(224, 28%, 35%); /* 0px 4px * 2.0 */
+}
+
+.delete:active {
+    transform: translateY(2px); /* 1px * 2.0 */
+    box-shadow: 0px 8px 0px hsl(224, 28%, 35%); /* 0px 4px * 2.0 */
+}
+
+/* .result{
+
+    background-color: hsl(224, 36%, 15%);
+    font-family: 'League Spartan';
+    font-size: 50px;
+    margin: 20px;
+    padding: 30px 90px 60px 10px;
+    border-radius: 10px; 
+    color: hsl(0, 0%, 100%);
+    width: 415px;
+    height: 20px;
+    font-weight: bold;
+    text-indent: 450px;
+
+} */
+
+.result {
+    
+    border: none; /* Remove a borda padrão */
+    outline: none; /* Remove o contorno ao focar */
+    
+}
+
+input.result {
+    background-color: hsl(224, 36%, 15%);
+    font-family: 'League Spartan';
+    font-size: 50px;
+    margin: 20px;
+    padding: 50px 90px 40px 10px;
+    border-radius: 10px;
+    color: hsl(0, 0%, 100%);
+    width: 415px;
+    
+    height: 20px;
+    font-weight: bold;
+    
+    direction: rtl; /* Direção do texto da direita para a esquerda */
+}
+
+
+/* CSS para o Tema 2 */
+body.theme-2 {
+    background-color: hsl(0, 0%, 90%);
+}
+
+body.theme-2 .opcaoTema{
+    color: hsl(60, 10%, 19%);
+}
+
+body.theme-2 .text1{
+    color: hsl(60, 10%, 19%);
+}
+
+body.theme-2 .text2{
+    color: hsl(60, 10%, 19%);
+}
+
+body.theme-2 .matrizDeBotoes {
+    background-color: hsl(0, 5%, 81%);
+}
+
+body.theme-2 .result {
+    background-color: hsl(0, 0%, 93%);
+    color: hsl(60, 10%, 19%);
+}
+
+body.theme-2 .tecla,
+body.theme-2 .tecla1,
+body.theme-2 .teclam,
+body.theme-2 .teclap {
+    background-color: hsl(45, 7%, 89%);
+    box-shadow: 0px 4px 0px hsl(35, 11%, 61%);
+    color: hsl(60, 10%, 19%);
+}
+
+body.theme-2 .delete,
+body.theme-2 .reset {
+    background-color: hsl(25, 98%, 40%);
+    box-shadow: 0px 6px 0px hsl(25, 99%, 27%);
+    color: hsl(0, 0%, 100%);
+}
+
+body.theme-2 .equal {
+    background-color: hsl(185, 42%, 37%);
+    box-shadow: 0px 6px 0px hsl(185, 58%, 25%);
+    color: hsl(0, 0%, 100%);
+}
+
+body.theme-2 .toggle-switch {
+    background-color: hsl(0, 5%, 81%);
+}
+
+body.theme-2 .toggle-button {
+    background-color: hsl(25, 98%, 40%);
+}
+
+/* CSS para o Tema 3 */
+body.theme-3 {
+    background-color: hsl(268, 75%, 9%);
+}
+
+body.theme-3 .opcaoTema {
+    color: hsl(52, 100%, 62%);
+}
+
+body.theme-3 .text1, body.theme-3 .text2 {
+    color: hsl(52, 100%, 62%);
+}
+
+body.theme-3 .matrizDeBotoes {
+    background-color: hsl(268, 71%, 12%);
+}
+
+body.theme-3 .result {
+    background-color: hsl(268, 71%, 12%);
+    color: hsl(52, 100%, 62%);
+}
+
+body.theme-3 .tecla, body.theme-3 .tecla1, body.theme-3 .teclam, body.theme-3 .teclap {
+    background-color: hsl(268, 47%, 21%);
+    box-shadow: 0px 4px 0px hsl(290, 70%, 36%);
+    color: hsl(52, 100%, 62%);
+}
+
+body.theme-3 .delete, body.theme-3 .reset {
+    background-color: hsl(281, 89%, 26%);
+    box-shadow: 0px 6px 0px hsl(285, 91%, 52%);
+    color: hsl(0, 0%, 100%);
+}
+
+body.theme-3 .equal {
+    background-color: hsl(176, 100%, 44%);
+    box-shadow: 0px 6px 0px hsl(177, 92%, 70%);
+    color: hsl(198, 20%, 13%);
+}
+
+body.theme-3 .toggle-switch {
+    background-color: hsl(268, 71%, 12%);
+}
+
+body.theme-3 .toggle-button {
+    background-color: hsl(176, 100%, 44%);
+}   
+
