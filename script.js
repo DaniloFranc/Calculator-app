@@ -22,26 +22,26 @@ document.getElementById('switch-on').addEventListener('change', function() {
     }
 });
 
-// Inicializando a página com o theme-1 e marcando o switch-off
+
 switchTheme('theme-1');
 document.getElementById('switch-off').checked = true;
 
 
-const resultInput = document.querySelector('.result'); // Seleciona o elemento de resultado
+const resultInput = document.querySelector('.result'); 
 
-// Função para adicionar eventos de clique às teclas numéricas e de operação
+
 function addClickEvents() {
     const teclas = document.querySelectorAll('.tecla');
 
     teclas.forEach(tecla => {
         tecla.addEventListener('click', () => {
             if (resultInput.value === '0') {
-                resultInput.value = ''; // Limpa o zero inicial ao digitar o primeiro número
+                resultInput.value = ''; 
             }
             if (tecla.textContent === '.') {
-                resultInput.value += ','; // Substitui o ponto por vírgula
+                resultInput.value += ',';
             } else {
-                resultInput.value += tecla.textContent; // Adiciona o valor da tecla ao resultado
+                resultInput.value += tecla.textContent; 
             }
         });
     });
@@ -49,89 +49,88 @@ function addClickEvents() {
     const tecla1 = document.querySelector('.tecla1');
     tecla1.addEventListener('click', () => {
         if (resultInput.value === '0') {
-            resultInput.value = ''; // Limpa o zero inicial ao digitar o primeiro número
+            resultInput.value = ''; 
         }
         if (tecla1.textContent === '.') {
-            resultInput.value += ','; // Substitui o ponto por vírgula
+            resultInput.value += ','; 
         } else {
-            resultInput.value += tecla1.textContent; // Adiciona o valor da tecla ao resultado
+            resultInput.value += tecla1.textContent; 
         }
     });
 
-    // Captura o botão de vírgula (.teclap) e adiciona ao valor do input
+    
     const teclaVirgula = document.querySelector('.teclap');
     teclaVirgula.addEventListener('click', () => {
         if (resultInput.value === '0') {
-            resultInput.value = ''; // Limpa o zero inicial ao digitar a primeira vírgula
+            resultInput.value = ''; 
         }
-        resultInput.value += ','; // Adiciona a vírgula ao resultado
+        resultInput.value += ','; 
     });
 
-    // Captura o sinal de "-" (teclam) e adiciona ao valor do input
+    
     const teclaMinus = document.querySelector('.teclam');
     teclaMinus.addEventListener('click', () => {
         if (resultInput.value === '0') {
-            resultInput.value = ''; // Limpa o zero inicial ao digitar o primeiro número
+            resultInput.value = ''; 
         }
-        resultInput.value += '-'; // Adiciona o sinal de subtração ao resultado
+        resultInput.value += '-'; 
     });
 
     const teclaMulti = document.querySelector('.teclax');
     teclaMulti.addEventListener('click', () => {
         if (resultInput.value === '0') {
-            resultInput.value = ''; // Limpa o zero inicial ao digitar o primeiro número
+            resultInput.value = ''; 
         }
-        resultInput.value += '*'; // Adiciona o sinal de subtração ao resultado
+        resultInput.value += '*';
     });
 }
 
-// Função para adicionar evento ao botão DEL
+
 function addDelEvent() {
     const delButton = document.querySelector('.delete');
     delButton.addEventListener('click', () => {
-        // Obtem o valor atual do campo de entrada
+       
         let currentValue = resultInput.value;
 
-        // Verifica se há caracteres para deletar
+        
         if (currentValue.length > 0) {
-            // Remove o último caractere
+            
             resultInput.value = currentValue.slice(0, -1);
         }
     });
 }
 
 
-// Função para adicionar evento ao botão RESET
 function addResetEvent() {
     const resetButton = document.querySelector('.reset');
     resetButton.addEventListener('click', () => {
-        resultInput.value = '0'; // Reseta o resultado para zero ao clicar em RESET
+        resultInput.value = '0'; 
     });
 }
 
-// Função para adicionar evento ao botão de igual (=)
+
 function addEqualEvent() {
     const equalButton = document.querySelector('.equal');
     equalButton.addEventListener('click', () => {
         try {
-            // Substitui todas as vírgulas por pontos para usar na função eval()
+            
             let valor = resultInput.value.replace(/,/g, '.');
-            resultInput.value = eval(valor); // Calcula a expressão e atualiza o resultado
+            resultInput.value = eval(valor); 
         } catch (error) {
-            resultInput.value = 'Error'; // Caso ocorra um erro na expressão
+            resultInput.value = 'Error';
         }
     });
 }
 
-// Adiciona os eventos de clique às teclas numéricas e de operação
+
 addClickEvents();
 
-// Adiciona evento ao botão DEL
+
 addDelEvent();
 
-// Adiciona evento ao botão RESET
+
 addResetEvent();
 
-// Adiciona evento ao botão de igual (=)
+
 addEqualEvent();
 
