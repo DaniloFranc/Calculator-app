@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
-
-
 
     function switchTheme(theme) {
         document.body.classList.remove('theme-1', 'theme-2', 'theme-3');
@@ -26,7 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Inicializando a página com o theme-1 e marcando o switch-off
+    switchTheme('theme-1');
+    document.getElementById('switch-off').checked = true;
 });
+
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -78,15 +79,31 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             resultInput.value += '-'; // Adiciona o sinal de subtração ao resultado
         });
+
+        const teclaMulti = document.querySelector('.teclax');
+        teclaMulti.addEventListener('click', () => {
+            if (resultInput.value === '0') {
+                resultInput.value = ''; // Limpa o zero inicial ao digitar o primeiro número
+            }
+            resultInput.value += '*'; // Adiciona o sinal de subtração ao resultado
+        });
     }
 
     // Função para adicionar evento ao botão DEL
     function addDelEvent() {
         const delButton = document.querySelector('.delete');
         delButton.addEventListener('click', () => {
-            resultInput.value = '0'; // Reseta o resultado para zero ao clicar em DEL
+            // Obtem o valor atual do campo de entrada
+            let currentValue = resultInput.value;
+    
+            // Verifica se há caracteres para deletar
+            if (currentValue.length > 0) {
+                // Remove o último caractere
+                resultInput.value = currentValue.slice(0, -1);
+            }
         });
     }
+    
 
     // Função para adicionar evento ao botão RESET
     function addResetEvent() {
