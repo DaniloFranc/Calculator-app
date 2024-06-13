@@ -26,11 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicializando a página com o theme-1 e marcando o switch-off
     switchTheme('theme-1');
     document.getElementById('switch-off').checked = true;
-});
 
 
-
-document.addEventListener('DOMContentLoaded', function () {
     const resultInput = document.querySelector('.result'); // Seleciona o elemento de resultado
 
     // Função para adicionar eventos de clique às teclas numéricas e de operação
@@ -138,6 +135,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Adiciona evento ao botão de igual (=)
     addEqualEvent();
+
+
 });
+
 
 
